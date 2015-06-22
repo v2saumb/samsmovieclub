@@ -1,0 +1,600 @@
+
+<head>
+    <meta charset="utf-8">
+    <title>Sam's Movie Club</title>
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet"
+    href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet"
+     href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script
+    src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <style type="text/css" media="screen">
+        body {
+            padding-top: 80px;
+        }
+        #trailer .modal-dialog {
+            margin-top: 200px;
+            width: 640px;
+            height: 480px;
+        }
+        .hanging-close {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            z-index: 9001;
+        }
+        #trailer-video {
+            width: 100%;
+            height: 100%;
+        }
+        .movie-tile {
+            margin-bottom: 20px;
+            padding-top: 20px;
+        }
+        .movie-tile:hover {
+            background-color: #EEE;
+            cursor: pointer;
+        }
+        .scale-media {
+            padding-bottom: 56.25%;
+            position: relative;
+        }
+        .navbar-inverse {
+            background-image: linear-gradient(to bottom, #0CA9FF 0px,
+                               #282599 100%);
+            background-repeat: repeat-x;
+        }
+        .navbar-inverse .navbar-brand {
+           color: #fff;
+        }
+        .scale-media iframe {
+            border: none;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            background-color: white;
+        }
+        .row-border{
+            padding-bottom:5px;
+            padding-top:5px;
+            border-bottom:1px solid #ccc;
+        }
+        .content_scroll{
+            overflow-y: scroll;
+            height: 300px;
+            width: 100%;
+
+        }
+        .row{
+            border-bottom: 0.1em solid #ccc;
+            padding-top: 10px;
+        }
+    </style>
+    <script type="text/javascript" charset="utf-8">
+        // Pause the video when the modal is closed
+        $(document).on('click', '.hanging-close, .modal-backdrop, .modal',
+            function (event) {
+        // Remove the src so the player itself gets removed, as this is
+        // the only reliable way to ensure the video stops playing in IE
+            $("#trailer-video-container").empty();
+        });
+        // Start playing the video whenever the trailer modal is opened
+        $(document).on('click', '.movie-tile', function (event) {
+            var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
+            var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId
+            + '?autoplay=1&html5=1';
+            $("#trailer-video-container").empty().append($("<iframe></iframe>",{
+              'id': 'trailer-video',
+              'type': 'text-html',
+              'src': sourceUrl,
+              'frameborder': 0
+            }));
+        });
+    </script>
+</head>
+
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <!-- Trailer Video Modal -->
+    <div class="modal" id="trailer">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <a href="#" class="hanging-close" data-dismiss="modal"
+          aria-hidden="true">
+          <img src="https://lh5.ggpht.com/v4-628SilF0HtHuHdu5EzxD7WRqOrrTIDi_MhEG6_qkNtUK5Wg7KPkofp_VJoF7RS2LhxwEFCO1ICHZlc-o_=s0#w=24&h=24"/>
+          </a>
+          <div class="scale-media" id="trailer-video-container">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Main Page Content -->
+    <div class="container">
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Sam's Movie Club</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+  <div id="content">
+  <ul id="tabs" class="nav nav-tabs  row" data-tabs="tabs">
+            <li class="active">
+            <a href="#Movies" data-toggle="tab">Movies</a></li>
+            <li><a href="#TVShow" data-toggle="tab">TV Shows</a></li>
+       </ul>
+        <div id="main_tab_content" class="tab-content ">
+            <div class="tab-pane active" id="Movies">
+            <div id="content">
+                
+   <div id="4_content" class="row">
+   <div class="col-md-5 movie-tile text-center"
+   data-trailer-youtube-id="UqNRkA0Zq3Q
+" data-toggle="modal"
+   data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMTMwODY3NzQzNF5BMl5BanBnXkFtZTcwNzUxNjc0MQ@@._V1_SY317_CR6,0,214,317_AL_.jpg" width="220" height="342" />
+    <h3>Independence Day(1996)</h3>
+    <h5>PG-13 | 145 min </h5>
+</div>
+        <ul id="tabs_movie" class="nav nav-tabs  col-md-7" data-tabs="tabs">
+            <li class="active"><a href="#4_story" data-toggle="tab">
+            Story Line</a></li>
+            <li><a href="#4_cast" data-toggle="tab">
+            Cast and Director</a></li>
+            <li><a href="#4_ratings"
+            data-toggle="tab">Reviews & Ratings</a></li>
+        </ul>
+        <div id="movies-tab-content" class="tab-content col-md-5">
+            <div class="tab-pane active" id="4_story">
+                <h3>Story Line</h3>
+                <p>The aliens are coming and their goal is to invade and destroy Earth. Fighting superior technology, mankind's best weapon is the will to survive.</p>
+                <h3>Genres</h3>
+                <p>Action , Adventure , Sci-Fi</p>
+                <h3>Duration</h3>
+                <p>145 min</p>
+            </div>
+            <div class="tab-pane" id="4_cast">
+                <h3>Director</h3>
+                <p> Roland Emmerich</p>
+                <h3>Cast</h3>
+                <p> Will Smith, Bill Pullman, Jeff Goldblum</p>
+            </div>
+            <div class="tab-pane" id="4_ratings">
+                <p><strong>Average Viewer's Rating:</strong>
+                 8 / 10 </p>
+                <p><strong>Total Reviews:</strong>2</p>
+                <div class="content_scroll">
+                
+   <div class="row row-border">
+       <div class="col-md-5"><strong>User: </strong>user_one</div>
+       <div class="col-md-5"><strong>Rating: </strong>7 / 10</div>
+       <div class="col-md-10"><strong>Comments: </strong>Independence Day is the sort of film that's best appreciated on a big screen, preferably a massive great plasma television that is so huge you had to cut the roof off your house and get airlifted in by helicopters just to get it in the living room. You should also have the most state of the art surround sound possible, with bass pickups so deep they cause earthquakes on the Eastern seaboard. Not because Dean Devlin and Roland Emmerich's alien invasion flick is a masterpiece of cinematic art or anything, but because it's loud. Very loud. And if the windows in your house don't shatter when the spaceship flies over New York then well, you're just not experiencing it properly.</div>
+   </div>
+
+
+   <div class="row row-border">
+       <div class="col-md-5"><strong>User: </strong>user_one</div>
+       <div class="col-md-5"><strong>Rating: </strong>10 / 10</div>
+       <div class="col-md-10"><strong>Comments: </strong>Never mind the stereotypical characters. Never mind the non-existant logic. Never mind that the dialogue is inane and bordering on idiotic. THIS IS GREAT ACTION! And there's no point in denying it.
+
+First of all: I love to watch destruction. Preferably in larger scales. You get fed an enormous amount of it here. Second: I love alien starships the size of New York. And you sure get that too. And third: I love dogfights. You get that too. Forth: I don't take it seriously.
+
+This films is one of the best of the decade, not simply because it works so well in an all-over scheme, but it provides some kicks that no other film had up to then (1996). Aliens arrive in gigantic spaceships and blow up a bunch of major cities. That's all I need.</div>
+   </div>
+
+
+                </div>
+            </div>
+        </div>
+        </div>
+
+   <div id="2_content" class="row">
+   <div class="col-md-5 movie-tile text-center"
+   data-trailer-youtube-id="5PSNL1qE6VY" data-toggle="modal"
+   data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SY317_CR0,0,214,317_AL_.jpg" width="220" height="342" />
+    <h3>Avatar(2009)</h3>
+    <h5>PG-13 |  162 min </h5>
+</div>
+        <ul id="tabs_movie" class="nav nav-tabs  col-md-7" data-tabs="tabs">
+            <li class="active"><a href="#2_story" data-toggle="tab">
+            Story Line</a></li>
+            <li><a href="#2_cast" data-toggle="tab">
+            Cast and Director</a></li>
+            <li><a href="#2_ratings"
+            data-toggle="tab">Reviews & Ratings</a></li>
+        </ul>
+        <div id="movies-tab-content" class="tab-content col-md-5">
+            <div class="tab-pane active" id="2_story">
+                <h3>Story Line</h3>
+                <p>A Paraplegic Marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home</p>
+                <h3>Genres</h3>
+                <p> Action , Adventure , Fantasy , Sci-Fi</p>
+                <h3>Duration</h3>
+                <p> 162 min</p>
+            </div>
+            <div class="tab-pane" id="2_cast">
+                <h3>Director</h3>
+                <p> James Cameron</p>
+                <h3>Cast</h3>
+                <p>Sam Worthington, Zoe Saldana, Sigourney Weaver</p>
+            </div>
+            <div class="tab-pane" id="2_ratings">
+                <p><strong>Average Viewer's Rating:</strong>
+                 9 / 10 </p>
+                <p><strong>Total Reviews:</strong>3</p>
+                <div class="content_scroll">
+                
+   <div class="row row-border">
+       <div class="col-md-5"><strong>User: </strong>newuser</div>
+       <div class="col-md-5"><strong>Rating: </strong>10 / 10</div>
+       <div class="col-md-10"><strong>Comments: </strong>I saw this epic last night at the Empire Leicester Sq in London, which is a superb venue in which to view this film. Huge screen, excellent sound and an extraordinary Dolby, 3 dimensional image. The whole effect is mind blowing.
+
+This is a 'Must see' movie, innovative, and extraordinary. I think it will be regarded by most cinema goers as another milestone in the history of the art. The level of realism achieved is remarkable, and although the film is relatively long in real time, it retains it's excitement and holds the audience's attention to the end.
+
+Performances are good, but this is not the sort of film that dwells on big star value for the actors, although Sigorney Weaver does shine and delivers a very convincing performance, as do the rest of the cast. But as there is so much entertainment and action value on screen the human element does not dominate in the usual way.
+
+As Writer/Director, James Cameron deserves high praise for this creation and in my opinion it will break box office records. I thoroughly enjoyed this film.</div>
+   </div>
+
+
+   <div class="row row-border">
+       <div class="col-md-5"><strong>User: </strong>anonymus</div>
+       <div class="col-md-5"><strong>Rating: </strong>8 / 10</div>
+       <div class="col-md-10"><strong>Comments: </strong>James Cameron is one of the best directors of all time. He is what you may call an Auteur. If you aren't aware of this, then you probably are not a movie person. James Cameron wrote and directed Terminator, Aliens, Terminator 2, and Titanic. That last one I'm not a fan of, but he won Best Director, Picture, and it became the highest grossing film of all time. $1.2 billion dollars.
+
+Avatar is his latest film, it is a movie that has been in the works since 1994. After a decade of being in the works, you would expect it to be a good movie. But the real question is it any good? It is the most expensive film ever made. The budget was $500,000,000 so you'll be wondering if all that money was put to good use, and if you should spend $11.00 to see the film in 3-D. Should you or should you not?
+
+The answer is that you should. Avatar is a monumental success. It is a film unlike anything you have ever seen. It uses special effects to a level that you have never seen, and that's not a bad thing.
+</div>
+   </div>
+
+
+   <div class="row row-border">
+       <div class="col-md-5"><strong>User: </strong>user1</div>
+       <div class="col-md-5"><strong>Rating: </strong>9 / 10</div>
+       <div class="col-md-10"><strong>Comments: </strong>For all its visual proficiency, "Avatar" is not the apex of cinematic achievement some reviewers would have you believe it is, and the primary reason is this: the wobbly script is about as old as cinema itself -- the abundance of flat dialogue like "You're not the only one with a gun, bitch" doesn't help either. For this reason (and others discussed below) I still rank Peter Jackson's "Lord of the Rings" trilogy as superior to "Avatar" -- Cameron's film may be technologically superior, but it lacks the intelligence and subtle emotion of Jackson's expertly crafted cinematic trio.
+
+"Avatar" is filled with familiar characters, from the rebellious outsider and hero Jake Scully (Sam Worthington) to noble human scientist Dr. Grace Augustine (Sigourney Weaver) to a cartoonish villain (Stephen Lang) invoking the imperialist bloodlust of Bush Cheney Co. to the wise and peaceful Na'vi chief (Wes Studi) and shaman (C.C.H. Pounder) who happen to be parents to the Na'vi princess, Neytiri (Zoe Saldana).
+</div>
+   </div>
+
+
+                </div>
+            </div>
+        </div>
+        </div>
+
+   <div id="1_content" class="row">
+   <div class="col-md-5 movie-tile text-center"
+   data-trailer-youtube-id="KYz2wyBy3kc" data-toggle="modal"
+   data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMTgwMjI4MzU5N15BMl5BanBnXkFtZTcwMTMyNTk3OA@@._V1_SX640_SY720_.jpg" width="220" height="342" />
+    <h3> Toy Story(1995)</h3>
+    <h5> G |  81 min </h5>
+</div>
+        <ul id="tabs_movie" class="nav nav-tabs  col-md-7" data-tabs="tabs">
+            <li class="active"><a href="#1_story" data-toggle="tab">
+            Story Line</a></li>
+            <li><a href="#1_cast" data-toggle="tab">
+            Cast and Director</a></li>
+            <li><a href="#1_ratings"
+            data-toggle="tab">Reviews & Ratings</a></li>
+        </ul>
+        <div id="movies-tab-content" class="tab-content col-md-5">
+            <div class="tab-pane active" id="1_story">
+                <h3>Story Line</h3>
+                <p>A cowboy doll is profoundly threatened and jealous when a new spaceman figure supplants him as top toy in a boy's room.</p>
+                <h3>Genres</h3>
+                <p> Animation , Adventure , Comedy , Family , Fantasy</p>
+                <h3>Duration</h3>
+                <p> 81 min</p>
+            </div>
+            <div class="tab-pane" id="1_cast">
+                <h3>Director</h3>
+                <p>John Lasseter</p>
+                <h3>Cast</h3>
+                <p>Tom Hanks, Tim Allen, Don Rickles And Others</p>
+            </div>
+            <div class="tab-pane" id="1_ratings">
+                <p><strong>Average Viewer's Rating:</strong>
+                 9 / 10 </p>
+                <p><strong>Total Reviews:</strong>3</p>
+                <div class="content_scroll">
+                
+   <div class="row row-border">
+       <div class="col-md-5"><strong>User: </strong>user_one</div>
+       <div class="col-md-5"><strong>Rating: </strong>10 / 10</div>
+       <div class="col-md-10"><strong>Comments: </strong>I am a big fan of the animated movies coming from the Pixar Studios. They are always looking for the newest technological possibilities to use in their movies, creating movies that are more than just worth a watch, even when they were made a decade ago.
+
+The movie is about toys that come to life when their owner is asleep or not in the same room. When the young boy's birthday is coming up, all the toys are nervous. They don't want to be ignored when the new one arrives. Woody the cowboy is their "leader" because he's the most popular one of them all. He's the only one that hasn't got to be afraid, but than a new favorite arrives ... Buzz Lightyear. He hates him and tries everything possible to get rid of him, but as the time passes by they learn to appreciate each other...</div>
+   </div>
+
+
+   <div class="row row-border">
+       <div class="col-md-5"><strong>User: </strong>user007</div>
+       <div class="col-md-5"><strong>Rating: </strong>9 / 10</div>
+       <div class="col-md-10"><strong>Comments: </strong>I saw Toy Story in theaters in 95. As a kid it was funny, and original not just in story but in presentation.
+
+After 15 years the cg doesn't hold up in all areas. The human characters look stiff and the way background looks a bit flat. This plastic look works with toys so it doesn't become a problem.
+
+The movie holds up in every other area. The plot is engaging and the characters funny and likable.
+
+Toy Story is a family film it funny for children without talking down to them and enjoyable for adults.
+
+As a twenty something year old it is just as entertaining as when I first saw the original release.</div>
+   </div>
+
+
+   <div class="row row-border">
+       <div class="col-md-5"><strong>User: </strong>moviefan</div>
+       <div class="col-md-5"><strong>Rating: </strong>9 / 10</div>
+       <div class="col-md-10"><strong>Comments: </strong>I saw this movie when i was 5 years old a long time ago and I was so obsessed with Buzz Lightyear! I had toys of buzz Lightyear and carried them around anywhere i went.I saw this movie yesterday again and it was fabulous! plain fabulous. The story was amazing and the characters were well made! Nice job Pixar, You done it again! Tom Hanks did well doing a voice of Woody and same with Tim Allen with Buzz. I didn't really like Wall.E i almost fell asleep but this movie kept me awake the whole time with excitement! I recommend this movie to anyone no matter what age you are because this movie Just Beautiful! An fantastic awesome 10/10</div>
+   </div>
+
+
+                </div>
+            </div>
+        </div>
+        </div>
+
+            </div>
+            </div>
+            <div class="tab-pane" id="TVShow">
+              <div id="content">
+                
+   <div id="6_content" class="row">
+   <div class="col-md-5 movie-tile text-center"
+   data-trailer-youtube-id="JGBIimq1I3A" data-toggle="modal"
+   data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BNTk2ODQzOTY4N15BMl5BanBnXkFtZTgwNjkwMjQ3MjE@._V1_SY317_CR1,0,214,317_AL_.jpg" width="220" height="342" />
+    <h3>The Blacklist(2013)</h3>
+    <h5>TV-14 | 43 min </h5>
+   </div>
+        <ul id="tabs_tv" class="nav nav-tabs  col-md-7" data-tabs="tabs">
+            <li class="active">
+                <a href="#6_story" data-toggle="tab">Story Line</a>
+             </li>
+            <li>
+                <a href="#6_cast" data-toggle="tab">
+                Cast and Director</a>
+            </li>
+            <li>
+                <a href="#6_ratings"
+                data-toggle="tab">Reviews & Ratings</a>
+            </li>
+        </ul>
+        <div id="shows-tab-content" class="tab-content col-md-5">
+            <div class="tab-pane active" id="6_story">
+                <h3>Story Line</h3>
+                <p>Elizabeth 'Liz' Keen, a new FBI profiler has her entire life uprooted when a mysterious criminal, Raymond Reddington, on the FBI's Top Ten Most Wanted List turns himself in and insists on speaking to her.</p>
+                <h3>Genres</h3>
+                <p>Crime, Drama, Mystery</p>
+                <h3>Duration</h3>
+                <p>43 min</p>
+                <h3>Number of Episodes</h3>
+                <p>66</p>
+                <h3>No of Seasons</h3>
+                <p>3</p>
+            </div>
+            <div class="tab-pane" id="6_cast">
+                <h3>Creators</h3>
+                <p>Jon Bokenkamp</p>
+                <h3>Cast</h3>
+                <p>James Spader, Megan Boone, Diego Klattenhoff</p>
+            </div>
+            <div class="tab-pane" id="6_ratings">
+                <p><strong>Average Viewer's Rating:</strong>
+                 7 / 10 </p>
+                <p><strong>Total Reviews:</strong>3</p>
+                <div class="content_scroll">
+                
+   <div class="row row-border">
+       <div class="col-md-5"><strong>User: </strong>scorpio</div>
+       <div class="col-md-5"><strong>Rating: </strong>5 / 10</div>
+       <div class="col-md-10"><strong>Comments: </strong>I was curious about this very hyped pilot, I like the idea and watched the pilot yesterday. I am not impressed and here is why; There is always a certain degree of imagination of course, that is not only expected but necessary- but the idea of FBI being so incredibly easy to manipulate is appalling. And the agents are portrayed as idiots. I have only seen one episode and I have already lost all respect for them. I did not like the female main character. She is way too gullible and perfectly fixed up even when she is in major danger. I thought we were passed those kind of female characters. And when story fails, because of lack of real people and a fascinating plot, add explosions, car chases and children in danger. I know it will probably pick up, James Spader is amazing in most things he does, but I will not waste any more time on this show.</div>
+   </div>
+
+
+   <div class="row row-border">
+       <div class="col-md-5"><strong>User: </strong>lily</div>
+       <div class="col-md-5"><strong>Rating: </strong>10 / 10</div>
+       <div class="col-md-10"><strong>Comments: </strong>ve been looking forward to James Spader's return to the small screen since Boston Legal. and just finished watching last episode at http://www.trailerdb.net as always Mr Spader has chosen well the show to return with, it is a fascinating series about a mastermind criminal turning himself in to the FBI with a list of criminals that are pulling strings all over the world, the people behind the criminals.
+
+The termination of Dexter and Breaking bad has left very little to watch on television but I can't help but to be hopeful with such great new shows taking their places. 
+
+I am a big fan of Mr Spader and I can't wait for the next episodes. Bravo!</div>
+   </div>
+
+
+   <div class="row row-border">
+       <div class="col-md-5"><strong>User: </strong>rose</div>
+       <div class="col-md-5"><strong>Rating: </strong>8 / 10</div>
+       <div class="col-md-10"><strong>Comments: </strong>I will be following this show ,because I saw the pilot recently and it impressed me and so did the next few episodes. What I did not like was the acting- Spader tries to play the mastermind nobody can touch until he wants them to,but somehow I am not convinced he fits the bill.Megan Boone looks good,but her acting is so dull .Same is the case with the supporting cast. About the show,it's definitely fresh and has that complex feel that viewers find intriguing. Overall,the show has an interesting plot and might even have many seasons ahead,but I just wish the actors get it together.The only saving grace in terms of convincing acting are Spader and the woman who plays Meera Malik -the leads could take a tip or two from her. It will be interesting to see where it goes from here. The blacklist is surely on the top of my "watchlist" :)</div>
+   </div>
+
+
+                </div>
+            </div>
+        </div>
+        </div>
+
+   <div id="5_content" class="row">
+   <div class="col-md-5 movie-tile text-center"
+   data-trailer-youtube-id="PerIAuv27SQ" data-toggle="modal"
+   data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMTkwODYyMjgzOV5BMl5BanBnXkFtZTgwODAzMTE5MjE@._V1_SX214_AL_.jpg" width="220" height="342" />
+    <h3>Agents of S.H.I.E.L.D.(2003)</h3>
+    <h5>TV-PG | 45 min </h5>
+   </div>
+        <ul id="tabs_tv" class="nav nav-tabs  col-md-7" data-tabs="tabs">
+            <li class="active">
+                <a href="#5_story" data-toggle="tab">Story Line</a>
+             </li>
+            <li>
+                <a href="#5_cast" data-toggle="tab">
+                Cast and Director</a>
+            </li>
+            <li>
+                <a href="#5_ratings"
+                data-toggle="tab">Reviews & Ratings</a>
+            </li>
+        </ul>
+        <div id="shows-tab-content" class="tab-content col-md-5">
+            <div class="tab-pane active" id="5_story">
+                <h3>Story Line</h3>
+                <p>After the Battle of New York, the world has changed. It now knows not only about the Avengers, but also the powerful menaces that require those superheroes and more to face them. In response, Phil Coulson of the Strategic Homeland Intervention, Enforcement and Logistics Division assembles an elite covert team to find and deal with these threats wherever they are found. With a world rapidly becoming more bizarre and dangerous than ever before as the supervillains arise, these agents of S.H.I.E.L.D. are ready to take them on</p>
+                <h3>Genres</h3>
+                <p>Action , Drama , Sci-Fi</p>
+                <h3>Duration</h3>
+                <p>45 min</p>
+                <h3>Number of Episodes</h3>
+                <p>66</p>
+                <h3>No of Seasons</h3>
+                <p>3</p>
+            </div>
+            <div class="tab-pane" id="5_cast">
+                <h3>Creators</h3>
+                <p>
+ Maurissa Tancharoen, Jed Whedon, Joss Whedon</p>
+                <h3>Cast</h3>
+                <p> Clark Gregg, Ming-Na Wen, Brett Dalton</p>
+            </div>
+            <div class="tab-pane" id="5_ratings">
+                <p><strong>Average Viewer's Rating:</strong>
+                 6 / 10 </p>
+                <p><strong>Total Reviews:</strong>3</p>
+                <div class="content_scroll">
+                
+   <div class="row row-border">
+       <div class="col-md-5"><strong>User: </strong>tango</div>
+       <div class="col-md-5"><strong>Rating: </strong>8 / 10</div>
+       <div class="col-md-10"><strong>Comments: </strong>I have to admit that I was less than thrilled with this show's beginning. I didn't think the characters were well defined and the plot seemed very lackluster.
+
+I did continue to watch, though, and I am glad that I did.
+
+Each week, the characters are developing and the chemistry between the actors is getting better. The writing and the quick witted dialog are classic Joss. It just took some time to work out the kinks.
+
+The story lines are getting tighter as the show goes on. Also, as each character develops, there are questions raised that keep me coming back each week for answers.
+
+I'm glad that I stuck with this show and gave it a chance. It is turning out to be a great ensemble action show that I hope will last a long time.</div>
+   </div>
+
+
+   <div class="row row-border">
+       <div class="col-md-5"><strong>User: </strong>charlie</div>
+       <div class="col-md-5"><strong>Rating: </strong>3 / 10</div>
+       <div class="col-md-10"><strong>Comments: </strong> think this is an interesting show.As with all new shows they can tweak it as they go along.I thought in the beginning it wouldn't hold my attention,since I have only watched one Avenger Movie and one Ironman Movie,but I am a fan of other Marvel comic movies.I think the spin off to television is a good idea.I like the cast. I think the cast appeals to younger and mature viewers. I really like Clark Gregg's character Coulson,he's vulnerable but strong,very sexy.I think he has all the viewers wondering what they did to him while he was allegedly dead.I hope the fans and the network give this show a chance.I believe it's worth it.</div>
+   </div>
+
+
+   <div class="row row-border">
+       <div class="col-md-5"><strong>User: </strong>delta</div>
+       <div class="col-md-5"><strong>Rating: </strong>8 / 10</div>
+       <div class="col-md-10"><strong>Comments: </strong>season 1 started slowly but since then it has grown into a television masterpiece leaving me every week wanting more!! The way the show is written they can change their future plans easily yet it seems what is happening in the end of season 2 was planned in detail in the beginning of season 1. The TV show is also a great way for marvel to introduce new characters try new pans and set up upcoming movies.
+
+Marvels Agents Of S.H.I.E.L.D's earlier episodes i season 1 will put many people off the show as it just seems slightly boring and pointless but sticking through those episodes you can see how every little detail in previous episodes are extremely important to the plot and the episodes near the end of season 2 were everything comes together in an excellent display of screen writing.</div>
+   </div>
+
+
+                </div>
+            </div>
+        </div>
+        </div>
+
+   <div id="3_content" class="row">
+   <div class="col-md-5 movie-tile text-center"
+   data-trailer-youtube-id="hx-J8TG8jLQ" data-toggle="modal"
+   data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMTg3OTc0NzkyOV5BMl5BanBnXkFtZTgwMDMwMTM3MjE@._V1_SX214_AL_.jpg" width="220" height="342" />
+    <h3> Arrow(2012)</h3>
+    <h5>TV-14 |  42 min </h5>
+   </div>
+        <ul id="tabs_tv" class="nav nav-tabs  col-md-7" data-tabs="tabs">
+            <li class="active">
+                <a href="#3_story" data-toggle="tab">Story Line</a>
+             </li>
+            <li>
+                <a href="#3_cast" data-toggle="tab">
+                Cast and Director</a>
+            </li>
+            <li>
+                <a href="#3_ratings"
+                data-toggle="tab">Reviews & Ratings</a>
+            </li>
+        </ul>
+        <div id="shows-tab-content" class="tab-content col-md-5">
+            <div class="tab-pane active" id="3_story">
+                <h3>Story Line</h3>
+                <p>Spoiled billionaire playboy Oliver Queen is missing and presumed dead when his yacht is lost at sea. He returns five years later a changed man  determined to clean up the city as a hooded vigilante armed with a bow.</p>
+                <h3>Genres</h3>
+                <p> Action , Adventure , Crime , Drama , Mystery , Sci-Fi</p>
+                <h3>Duration</h3>
+                <p> 42 min</p>
+                <h3>Number of Episodes</h3>
+                <p>40</p>
+                <h3>No of Seasons</h3>
+                <p>4</p>
+            </div>
+            <div class="tab-pane" id="3_cast">
+                <h3>Creators</h3>
+                <p> Greg Berlanti , Marc Guggenheim Andrew Kreisberg</p>
+                <h3>Cast</h3>
+                <p> Stephen Amell, Katie Cassidy, David Ramsey</p>
+            </div>
+            <div class="tab-pane" id="3_ratings">
+                <p><strong>Average Viewer's Rating:</strong>
+                 7 / 10 </p>
+                <p><strong>Total Reviews:</strong>3</p>
+                <div class="content_scroll">
+                
+   <div class="row row-border">
+       <div class="col-md-5"><strong>User: </strong>simpleuser</div>
+       <div class="col-md-5"><strong>Rating: </strong>7 / 10</div>
+       <div class="col-md-10"><strong>Comments: </strong>Any one who read DC comics will tell you Green Arrow is a poor mans Batman so to speak... That being said. With all the copy-write garbage I am sure it is easier to get rights to make a green arrow show rather than a new batman show... This still doesn't excuse how horrible this thing is. A friend referred it to me as a great show with the Flash in it. They don't cover the Flash at all really. Just a short cameo with normal Barry Allen. I would encourage you to watch a daytime soap opera then watch this garbage and tell me the difference. The acting is horrible. The writing is so awful that it must be done by drunken monkeys. They randomly put a villain in the clock tower and Arrows crew wonders where he is. They should just move their headquarters there. If they ask Laural one more time IS SOMETHING WRONG i will punch my TV.</div>
+   </div>
+
+
+   <div class="row row-border">
+       <div class="col-md-5"><strong>User: </strong>tvhog</div>
+       <div class="col-md-5"><strong>Rating: </strong>10 / 10</div>
+       <div class="col-md-10"><strong>Comments: </strong>Never mind the stereotypical characters. Never mind the non-existant logic. Never mind that the dialogue is inane and bordering on idiotic. THIS IS GREAT ACTION! And there's no point in denying it.
+
+First of all: I love to watch destruction. Preferably in larger scales. You get fed an enormous amount of it here. Second: I love alien starships the size of New York. And you sure get that too. And third: I love dogfights. You get that too. Forth: I don't take it seriously.
+
+This films is one of the best of the decade, not simply because it works so well in an all-over scheme, but it provides some kicks that no other film had up to then (1996). Aliens arrive in gigantic spaceships and blow up a bunch of major cities. That's all I need.</div>
+   </div>
+
+
+   <div class="row row-border">
+       <div class="col-md-5"><strong>User: </strong>purplefury</div>
+       <div class="col-md-5"><strong>Rating: </strong>5 / 10</div>
+       <div class="col-md-10"><strong>Comments: </strong>*** This review may contain spoilers ***
+
+Save yourself the time with this one unless your less than about 12 years old or have a very low IQ.
+
+It's like the ideas been pieced together from other shows. It's stupid, inconsistent, hypocritical, ridiculous, and most of the acting is terrible.
+
+It's a pity because the underlying story with the mother and her associates is the shows only redemption. You just have to sit through the agony of the rest of the show to get this. Maybe they should save us all the heartache and just tell us what happens with that story line.</div>
+   </div>
+
+
+                </div>
+            </div>
+        </div>
+        </div>
+
+            </div>
+            </div>
+        </div>
+    <div>
+    </div>
+  </body>
+</html>
